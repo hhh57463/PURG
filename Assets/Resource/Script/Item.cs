@@ -22,6 +22,11 @@ public class Item : MonoBehaviour {
         {
             transform.Translate(Vector2.left * fItemMoveSpeed * Time.deltaTime);
         }
+
+        if (transform.localPosition.x <= -25f)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

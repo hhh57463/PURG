@@ -26,4 +26,22 @@ public class SGameMng : MonoBehaviour
         _Instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 100.0f))
+            {
+
+                if (hit.transform.CompareTag("Item"))
+                {
+                    //Destroy(hit.transform);
+                    //Debug.Log("ADSFASDFADFADSFAFDASFD");
+                }
+            }
+        }
+
+    }
 }
