@@ -283,6 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resource\Script\BackGround.cs" />
+    <Compile Include="Assets\Resource\Script\GameBtnMng.cs" />
     <Compile Include="Assets\Resource\Script\Item.cs" />
     <Compile Include="Assets\Resource\Script\Player.cs" />
     <Compile Include="Assets\Resource\Script\SGameMng.cs" />

@@ -37,8 +37,7 @@ public class SGameMng : MonoBehaviour
 
                 if (hit.transform.CompareTag("Item"))
                 {
-                    //Destroy(hit.transform);
-                    //Debug.Log("ADSFASDFADFADSFAFDASFD");
+                    Debug.Log("이곳에서 아이템 클릭시 하는 이벤트 발생");
                 }
             }
         }
