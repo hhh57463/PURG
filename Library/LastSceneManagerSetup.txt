@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PURG.unity
+- path: Assets/2_GameScene.unity
   isLoaded: 1
   isActive: 1

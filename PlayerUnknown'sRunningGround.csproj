@@ -282,11 +282,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resource\GameScene\Script\BackGround.cs" />
-    <Compile Include="Assets\Resource\GameScene\Script\GameBtnMng.cs" />
-    <Compile Include="Assets\Resource\GameScene\Script\Item.cs" />
-    <Compile Include="Assets\Resource\GameScene\Script\Player.cs" />
-    <Compile Include="Assets\Resource\GameScene\Script\SGameMng.cs" />
+    <Compile Include="Assets\Resource\2_GameScene\2_Script\BackGround.cs" />
+    <Compile Include="Assets\Resource\2_GameScene\2_Script\GameBtnMng.cs" />
+    <Compile Include="Assets\Resource\2_GameScene\2_Script\Item.cs" />
+    <Compile Include="Assets\Resource\2_GameScene\2_Script\Player.cs" />
+    <Compile Include="Assets\Resource\2_GameScene\2_Script\SGameMng.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
