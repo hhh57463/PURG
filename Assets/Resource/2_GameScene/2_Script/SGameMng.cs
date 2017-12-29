@@ -49,9 +49,16 @@ public class SGameMng : MonoBehaviour
                 {
                     Debug.Log("이곳에서 아이템 클릭시 하는 이벤트 발생");
 
-                    if (!ItemSc.bWearCheck) { ItemSc.bWearCheck = true; }
-
-                    else { ItemSc.bWearCheck = false; }
+                    if (!ItemSc.bWearCheck)
+                    {
+                        ItemSc.bWearCheck = true;
+                        ItemSc.ItemCheckGams.SetActive(true);
+                    }
+                    else
+                    {
+                        ItemSc.bWearCheck = false;
+                        ItemSc.ItemCheckGams.SetActive(false);
+                    }
 
                 }
             }
@@ -61,13 +68,14 @@ public class SGameMng : MonoBehaviour
         {
 
         }
-        else if (nItemRand % 2 == 0)                     //짝수
+        else if (nItemRand % 2 == 0)                     //짝수           출현
         {
             bItemAllow = true;
             ItemSc.bItemMoveAllow = false;
+            ItemSc.ItemRezen();
             //nItemRand = 0;
         }
-        else/* if (nItemRand & 2 == 1)*/            //홀수
+        else/* if (nItemRand & 2 == 1)*/                  //홀수          X   
         {
             bItemAllow = false;
             //nItemRand = 0;
