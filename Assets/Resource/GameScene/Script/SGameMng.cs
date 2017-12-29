@@ -48,6 +48,16 @@ public class SGameMng : MonoBehaviour
                 if (hit.transform.CompareTag("Item"))
                 {
                     Debug.Log("이곳에서 아이템 클릭시 하는 이벤트 발생");
+
+                    if (!ItemSc.bWearCheck)
+                    {
+                        ItemSc.bWearCheck = true;
+                    }
+                    else
+                    {
+                        ItemSc.bWearCheck = false;
+                    }
+
                 }
             }
         }
@@ -76,11 +86,11 @@ public class SGameMng : MonoBehaviour
     public IEnumerator ItemSpawn()
     {
         Debug.Log("코루틴 시작!");
-        yield return new WaitForSeconds(5f);                                //여기 이후가 다시 호출이 안됨 Item스크립트에서 Item게임오브젝트를 Destroy해줘 코루틴이 끊기는듯
+        yield return new WaitForSeconds(5f);                              
         if (!bPlayerDie)
         {
-            nItemRand = Random.Range(1, 10);                         //1이면 아이템 출현 2면 X
-            Debug.Log("랜덤값 지정 완료!");
+            nItemRand = Random.Range(1, 10);                                //짝수면 출현 홀수면 X
+            Debug.Log("랜덤값 지정 완료, 값 : " + nItemRand);
             //StartCoroutine(ItemSpawn());
         }
     }

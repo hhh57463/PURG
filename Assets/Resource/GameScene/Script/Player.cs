@@ -5,13 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public GameObject[] Weapons = null;
+    public GameObject[] WeaponGams = null;
 
     public Transform[] WeaponTr = null;
 
     public SpriteRenderer[] WeaoponsSr = null;
 
-    Rigidbody2D PlayerRig;
+    Rigidbody PlayerRig;
 
     float fJumpPower = 0.0f;
 
@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        fJumpPower = 500f;
-        PlayerRig = GetComponent<Rigidbody2D>();
+        fJumpPower = 350f;
+        PlayerRig = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -33,8 +33,11 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        //float fX = Input.GetAxis("Horizontal");                                     //수평값을 알아오는 변수
-        //float fY = Input.GetAxis("Vertical");                                       //수직값을 알아오는 변수
+        //float fX = Input.GetAxis("Horizontal");                                    //수평값을 알아오는 변수
+        //float fY = Input.GetAxis("Vertical");                                      //수직값을 알아오는 변수
+
+        //Debug.Log("수평값 : " + fX);
+        //Debug.Log("수직값 : " + fY);
 
         //if (Input.GetMouseButtonDown(0) && !bJumpAllow)
         //{
@@ -57,35 +60,29 @@ public class Player : MonoBehaviour
     {
         if (!bWeaponSwap)
         {
-            Weapons[0].transform.parent = WeaponTr[0];
-            Weapons[1].transform.parent = WeaponTr[1];
-            Weapons[0].transform.rotation = Quaternion.Euler(0f, 0f, -110f);
-            Weapons[1].transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            WeaponGams[0].transform.parent = WeaponTr[0];
+            WeaponGams[1].transform.parent = WeaponTr[1];
+            WeaponGams[0].transform.rotation = Quaternion.Euler(0f, 0f, -110f);
+            WeaponGams[1].transform.rotation = Quaternion.Euler(Vector3.zero);
             WeaoponsSr[0].sortingOrder = 10;
             WeaoponsSr[1].sortingOrder = 70;
             bWeaponSwap = true;
-            for (int i = 0; i < Weapons.Length; i++)
-            {
-                Weapons[i].transform.localPosition = Vector3.zero;
-            }
+            for (int i = 0; i < WeaponGams.Length; i++) { WeaponGams[i].transform.localPosition = Vector3.zero; }
         }
         else
         {
-            Weapons[0].transform.parent = WeaponTr[1];
-            Weapons[1].transform.parent = WeaponTr[0];
-            Weapons[0].transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            Weapons[1].transform.rotation = Quaternion.Euler(0f, 0f, -110f);
+            WeaponGams[0].transform.parent = WeaponTr[1];
+            WeaponGams[1].transform.parent = WeaponTr[0];
+            WeaponGams[0].transform.rotation = Quaternion.Euler(Vector3.zero);
+            WeaponGams[1].transform.rotation = Quaternion.Euler(0f, 0f, -110f);
             WeaoponsSr[0].sortingOrder = 70;
             WeaoponsSr[1].sortingOrder = 10;
             bWeaponSwap = false;
-            for (int i = 0; i < Weapons.Length; i++)
-            {
-                Weapons[i].transform.localPosition = Vector3.zero;
-            }
+            for (int i = 0; i < WeaponGams.Length; i++) { WeaponGams[i].transform.localPosition = Vector3.zero; }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter(Collision col)
     {
         if (col.transform.CompareTag("Floor"))
         {

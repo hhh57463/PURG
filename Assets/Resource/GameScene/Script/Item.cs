@@ -8,6 +8,8 @@ public class Item : MonoBehaviour {
     public SpriteRenderer ItemSr = null;
 
     public bool bItemMoveAllow = false;
+    public bool bWearCheck = false;
+
     float fItemMoveSpeed = 0.0f;
 
 	// Use this for initialization
@@ -37,8 +39,17 @@ public class Item : MonoBehaviour {
             transform.localPosition = Vector3.zero;
             ItemBc.enabled = true;
             ItemSr.enabled = true;
+            bWearCheck = false;
             //Destroy(gameObject);
             
+        }
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            Debug.Log("이곳에서 아이템 장착 관련");
         }
     }
 
