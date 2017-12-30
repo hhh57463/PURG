@@ -14,6 +14,8 @@ public class SGameMng : MonoBehaviour
 
     public int nItemRand = 0;
 
+    public float fPlayerHp = 0.0f;
+
     public static SGameMng I
     {
         get
@@ -33,6 +35,7 @@ public class SGameMng : MonoBehaviour
 
     private void Start()
     {
+        fPlayerHp = 100.0f;
         StartCoroutine(ItemSpawn());
     }
 

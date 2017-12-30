@@ -66,7 +66,7 @@ public class Item : MonoBehaviour
         {
             if (col.CompareTag("Player"))
             {
-                Debug.Log("이곳에서 아이템이 어느정도 가까워 졌을시 장착 관련");
+                Debug.Log("이곳에서 아이템이 Enter상태 일시 장착 관련");
 
                 switch (nItemType)
                 {
@@ -116,8 +116,69 @@ public class Item : MonoBehaviour
                         }
                         break;
                 }
+                ItemBc.enabled = false;
+                ItemSr.enabled = false;
+                ItemCheckGams.SetActive(false);
+            }
+        }
+    }
 
+    private void OnTriggerStay(Collider col)
+    {
+        if (bWearCheck)
+        {
+            if (col.CompareTag("Player"))
+            {
+                Debug.Log("이곳에서 아이템이 Stay상태 일시 장착 관련");
 
+                switch (nItemType)
+                {
+                    case 1:
+                        Debug.Log("무기장착");
+                        if (nAmmorCount[0] == 0)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerItemGams[0].SetActive(true);
+                        }
+                        else if (nAmmorCount[0] == 1)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerItemGams[1].SetActive(true);
+                        }
+                        break;
+
+                    case 2:
+                        Debug.Log("근접무기장착");
+                        if (nAmmorCount[0] == 0)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerItemGams[0].SetActive(true);
+                        }
+                        else if (nAmmorCount[0] == 1)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerItemGams[1].SetActive(true);
+                        }
+                        break;
+
+                    case 3:
+                        Debug.Log("헬멧장착");
+                        if (nAmmorCount[1] == 0)
+                        {
+                            nAmmorCount[1]++;
+                            PlayerItemGams[2].SetActive(true);
+                        }
+                        break;
+
+                    case 4:
+                        Debug.Log("조끼장착");
+                        if (nAmmorCount[2] == 0)
+                        {
+                            nAmmorCount[2]++;
+                            PlayerItemGams[3].SetActive(true);
+                        }
+                        break;
+                }
                 ItemBc.enabled = false;
                 ItemSr.enabled = false;
                 ItemCheckGams.SetActive(false);

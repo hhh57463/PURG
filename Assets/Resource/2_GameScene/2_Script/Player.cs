@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        fJumpPower = 300f;
+        fJumpPower = 300.0f;
         PlayerRig = GetComponent<Rigidbody>();
     }
 
@@ -31,6 +31,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Move();
+        if (Input.GetKey(KeyCode.Space))
+        {
+            SGameMng.I.fPlayerHp -= 10.0f;
+        }
     }
 
     void Move()
