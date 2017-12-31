@@ -218,6 +218,7 @@ MonoBehaviour:
   bPlayerDie: 0
   bItemAllow: 0
   nItemRand: 0
+  nSurvivor: 0
   fPlayerHp: 0
 --- !u!4 &168679567
 Transform:
@@ -329,6 +330,7 @@ MonoBehaviour:
   ItemSr: {fileID: 451871786}
   bItemMoveAllow: 0
   bWearCheck: 0
+  bItemStart: 0
   nAmmorCount: 000000000000000000000000
 --- !u!65 &451871788
 BoxCollider:
@@ -1399,7 +1401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -325, y: 297}
+  m_AnchoredPosition: {x: -500, y: 270}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1473626236
@@ -1756,6 +1758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHp: {fileID: 862306341}
+  Survivor: {fileID: 2084056760}
 --- !u!1 &1906437069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,7 +2241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084056760

@@ -8,7 +8,7 @@ public class GameTextMng : MonoBehaviour {
     //public Player PlayerSc = null;
 
     public Text PlayerHp = null;
-    
+    public Text Survivor = null;
 
 	void Start () {
 
@@ -17,5 +17,6 @@ public class GameTextMng : MonoBehaviour {
 	void Update () {
 		
         PlayerHp.text = SGameMng.I.fPlayerHp.ToString();
+        Survivor.text = SGameMng.I.nSurvivor.ToString();
 	}
 }

@@ -13,6 +13,7 @@ public class Item : MonoBehaviour
 
     public bool bItemMoveAllow = false;
     public bool bWearCheck = false;
+    public bool bItemStart = false;
 
     public int[] nAmmorCount = new int[3];                              //0:무기, 1:헬멧, 2:조끼
     int nItemType = 0;
@@ -52,6 +53,7 @@ public class Item : MonoBehaviour
             bWearCheck = false;
             nItemType = 0;
             ItemCheckGams.SetActive(false);
+            bItemStart = false;
         }
     }
 
