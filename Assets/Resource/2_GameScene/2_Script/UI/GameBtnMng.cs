@@ -16,4 +16,9 @@ public class GameBtnMng : MonoBehaviour {
         PlayerSc.WeaponSwap();
     }
 
+    public void PlayerAttackBtn()
+    {
+        Debug.Log("공격 버튼!");
+    }
+
 }
