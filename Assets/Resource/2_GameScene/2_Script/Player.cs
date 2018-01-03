@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Move();
-        if (Input.GetKey(KeyCode.Space)) { SGameMng.I.fPlayerHp -= 10.0f; }                 //체력 테스트
+        if (Input.GetKey(KeyCode.Space)) { SGameMng.I.nPlayerHp -= 10; }                 //체력 테스트
     }
 
     void Move()

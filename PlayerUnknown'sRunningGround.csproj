@@ -282,6 +282,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resource\1_MenuScene\2_Script\MenuBtnMng.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\BackGround.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\Item.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\Player.cs" />

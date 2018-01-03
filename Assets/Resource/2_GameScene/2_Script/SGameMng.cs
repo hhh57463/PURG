@@ -14,8 +14,10 @@ public class SGameMng : MonoBehaviour
 
     public int nItemRand = 0;
     public int nSurvivor = 0;
+    public int nNowWeaponType = 0;
+    public int nPlayerHp = 0;
+    public int nSaveHp = 0;
 
-    public float fPlayerHp = 0.0f;
 
     public static SGameMng I
     {
@@ -36,14 +38,14 @@ public class SGameMng : MonoBehaviour
 
     private void Start()
     {
-        fPlayerHp = 100.0f;
+        nPlayerHp = 100;
         nSurvivor = 100;
+        nNowWeaponType = 0;
         StartCoroutine(ItemSpawn());
     }
 
     private void Update()
     {
-
         ItemPercent();
 
         if (Input.GetMouseButtonDown(0))

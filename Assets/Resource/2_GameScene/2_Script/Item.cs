@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
     public bool bItemMoveAllow = false;
     public bool bWearCheck = false;
     public bool bItemStart = false;
+    public bool bPlusHp = false;
 
     public int[] nAmmorCount = new int[3];                              //0:무기, 1:헬멧, 2:조끼
     int nItemType = 0;
@@ -32,6 +33,31 @@ public class Item : MonoBehaviour
     void Update()
     {
         ItemMove();
+        if (bPlusHp)
+        {
+            if (SGameMng.I.nSaveHp < 80)
+            {
+                if (SGameMng.I.nSaveHp + 20 > SGameMng.I.nPlayerHp)
+                {
+                    SGameMng.I.nPlayerHp++;
+                }
+                else
+                {
+                    bPlusHp = false;
+                }
+            }
+            else if (SGameMng.I.nSaveHp >= 80)
+            {
+                if (SGameMng.I.nPlayerHp < 100)
+                {
+                    SGameMng.I.nPlayerHp++; 
+                }
+                else
+                {
+                    bPlusHp = false;
+                }
+            }
+        }
     }
 
     void ItemMove()
@@ -59,7 +85,7 @@ public class Item : MonoBehaviour
 
     public void ItemRezen()
     {
-        nItemType = Random.RandomRange(1, 5);           //1:무기, 2:근접무기(프라이팬,빠루 등), 3:헬멧, 4:조끼
+        nItemType = Random.RandomRange(1, 6);           //1:무기, 2:근접무기(프라이팬,빠루 등), 3:헬멧, 4:조끼, 5:힐템
     }
 
     private void OnTriggerEnter(Collider col)
@@ -68,8 +94,6 @@ public class Item : MonoBehaviour
         {
             if (col.CompareTag("Player"))
             {
-                Debug.Log("이곳에서 아이템이 Enter상태 일시 장착 관련");
-
                 switch (nItemType)
                 {
                     case 1:
@@ -116,6 +140,12 @@ public class Item : MonoBehaviour
                             nAmmorCount[2]++;
                             PlayerItemGams[3].SetActive(true);
                         }
+                        break;
+
+                    case 5:
+                        Debug.Log("힐템");
+                        SGameMng.I.nSaveHp = SGameMng.I.nPlayerHp;
+                        bPlusHp = true;
                         break;
                 }
                 ItemBc.enabled = false;
@@ -131,8 +161,6 @@ public class Item : MonoBehaviour
         {
             if (col.CompareTag("Player"))
             {
-                Debug.Log("이곳에서 아이템이 Stay상태 일시 장착 관련");
-
                 switch (nItemType)
                 {
                     case 1:
@@ -179,6 +207,12 @@ public class Item : MonoBehaviour
                             nAmmorCount[2]++;
                             PlayerItemGams[3].SetActive(true);
                         }
+                        break;
+
+                    case 5:
+                        Debug.Log("힐템");
+                        SGameMng.I.nSaveHp = SGameMng.I.nPlayerHp;
+                        bPlusHp = true;
                         break;
                 }
                 ItemBc.enabled = false;
