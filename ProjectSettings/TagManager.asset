@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Floor
   - Item
+  - Punch
+  - SMG
+  - AR
+  - SR
   layers:
   - Default
   - TransparentFX

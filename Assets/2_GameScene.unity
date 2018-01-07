@@ -328,6 +328,7 @@ MonoBehaviour:
   - {fileID: 540529563}
   - {fileID: 2038292754}
   ItemCheckGams: {fileID: 1727612977}
+  PlayerSc: {fileID: 948431472}
   ItemBc: {fileID: 451871788}
   ItemSr: {fileID: 451871786}
   bItemMoveAllow: 0
@@ -627,7 +628,7 @@ GameObject:
   - component: {fileID: 731359293}
   m_Layer: 0
   m_Name: FirstWeapon
-  m_TagString: Untagged
+  m_TagString: Punch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,7 +681,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 70
   m_Sprite: {fileID: 21300000, guid: 659df933eb3cc894ab5a9b9c6bc9c321, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.11724138, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -703,7 +704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &745264547
 Transform:
   m_ObjectHideFlags: 0
@@ -729,7 +730,7 @@ GameObject:
   - component: {fileID: 831449062}
   m_Layer: 0
   m_Name: SecondWeapon
-  m_TagString: Untagged
+  m_TagString: Punch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +783,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 659df933eb3cc894ab5a9b9c6bc9c321, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9034481, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1068,6 +1069,8 @@ MonoBehaviour:
   WeaponGams:
   - {fileID: 731359291}
   - {fileID: 831449060}
+  NowWeaponGams: {fileID: 731359291}
+  DifferentWeaponGams: {fileID: 831449060}
   ItemSc: {fileID: 451871787}
   WeaponTr:
   - {fileID: 745264547}
@@ -1421,7 +1424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1473626237
 Transform:
   m_ObjectHideFlags: 0

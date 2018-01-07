@@ -8,6 +8,8 @@ public class Item : MonoBehaviour
     public GameObject[] PlayerItemGams = null;                          //0:오른손 무기, 1:왼손 무기, 2:헬멧, 3:조끼
     public GameObject ItemCheckGams = null;
 
+    public Player PlayerSc = null;
+
     public BoxCollider ItemBc = null;
     public SpriteRenderer ItemSr = null;
 
@@ -85,7 +87,8 @@ public class Item : MonoBehaviour
 
     public void ItemRezen()
     {
-        nItemType = Random.RandomRange(1, 6);           //1:무기, 2:근접무기(프라이팬,빠루 등), 3:헬멧, 4:조끼, 5:힐템
+       // nItemType = Random.RandomRange(1, 6);           //1:무기, 2:근접무기(프라이팬,빠루 등), 3:헬멧, 4:조끼, 5:힐템
+        nItemType = 1;
     }
 
     private void OnTriggerEnter(Collider col)
@@ -101,12 +104,14 @@ public class Item : MonoBehaviour
                         if (nAmmorCount[0] == 0)
                         {
                             nAmmorCount[0]++;
-                            PlayerItemGams[0].SetActive(true);
+                            PlayerSc.NowWeaponGams.tag = "AR";                      //우선 무기종류를 만들지 않았으므로 AR로 대체
+                            //PlayerItemGams[0].SetActive(true);
                         }
-                        else if (nAmmorCount[0] == 1)
+                        else if (nAmmorCount[0] >= 1)
                         {
                             nAmmorCount[0]++;
-                            PlayerItemGams[1].SetActive(true);
+                            PlayerSc.DifferentWeaponGams.tag = "AR";                //우선 무기종류를 만들지 않았으므로 AR로 대체
+                            //PlayerItemGams[1].SetActive(true);
                         }
                         break;
 
@@ -115,12 +120,14 @@ public class Item : MonoBehaviour
                         if (nAmmorCount[0] == 0)
                         {
                             nAmmorCount[0]++;
-                            PlayerItemGams[0].SetActive(true);
+                            PlayerSc.NowWeaponGams.tag = "Punch";                   //우선 근접무기종류를 만들지 않았으므로 Punch로 대체
+                            //PlayerItemGams[0].SetActive(true);
                         }
-                        else if (nAmmorCount[0] == 1)
+                        else if (nAmmorCount[0] >= 1)
                         {
                             nAmmorCount[0]++;
-                            PlayerItemGams[1].SetActive(true);
+                            PlayerSc.DifferentWeaponGams.tag = "Punch";             //우선 근접무기종류를 만들지 않았으므로 Punch로 대체
+                            //PlayerItemGams[1].SetActive(true);
                         }
                         break;
 

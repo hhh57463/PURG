@@ -40,7 +40,7 @@ public class SGameMng : MonoBehaviour
     {
         nPlayerHp = 100;
         nSurvivor = 100;
-        nNowWeaponType = 0;
+        nNowWeaponType = 0;                                             //처음엔 주먹
         StartCoroutine(ItemSpawn());
     }
 

@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
 
     public GameObject[] WeaponGams = null;
+    public GameObject NowWeaponGams = null;                                                         //현재무기
+    public GameObject DifferentWeaponGams = null;
 
     public Item ItemSc = null;
 
@@ -61,7 +63,7 @@ public class Player : MonoBehaviour
 
     public void WeaponSwap()
     {
-        if (ItemSc.nAmmorCount[0] >= 2)
+        if (ItemSc.nAmmorCount[0] >= 1)
         {
             if (!bWeaponSwap)
             {
@@ -85,7 +87,15 @@ public class Player : MonoBehaviour
                 bWeaponSwap = false;
                 for (int i = 0; i < WeaponGams.Length; i++) { WeaponGams[i].transform.localPosition = Vector3.zero; }
             }
+            StartCoroutine(SearchWeapon());                                                         //현재 무기 뭔지 알아오는 코루틴
         }
+    }
+
+    IEnumerator SearchWeapon()
+    {
+        yield return new WaitForSeconds(0.1f);
+        NowWeaponGams = GameObject.Find("RightWeapon").transform.GetChild(0).gameObject;
+        DifferentWeaponGams = GameObject.Find("LeftWeapon").transform.GetChild(0).gameObject;
     }
 
     private void OnCollisionEnter(Collision col)
