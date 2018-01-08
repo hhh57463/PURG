@@ -7,6 +7,7 @@ public class SGameMng : MonoBehaviour
 
     private static SGameMng _Instance = null;
 
+    public Player PlayerSc = null;
     public Item ItemSc = null;
 
     public bool bPlayerDie = false;

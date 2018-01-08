@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     public GameObject[] WeaponGams = null;
     public GameObject NowWeaponGams = null;                                                         //현재무기
-    public GameObject DifferentWeaponGams = null;
+    public GameObject DifferentWeaponGams = null;                                                   //다른손무기
 
     public Item ItemSc = null;
 
@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     {
         fJumpPower = 300.0f;
         PlayerRig = GetComponent<Rigidbody>();
+        NowWeaponGams.tag = "Punch";
+        DifferentWeaponGams.tag = "Punch";
     }
 
     // Update is called once per frame

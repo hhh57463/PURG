@@ -18,7 +18,6 @@ public class GameBtnMng : MonoBehaviour {
             {
                 if (hit.transform.CompareTag("AttackBtn"))
                 {
-                    // PlayerAttackBtn();
                     bAttackBtnAllow = true;
                 }
             }
@@ -58,7 +57,32 @@ public class GameBtnMng : MonoBehaviour {
 
     public void PlayerAttackBtn()
     {
-        Debug.Log("공격 버튼!");
+        //Debug.Log("공격 버튼!");
+        if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "AR")
+        {
+            Debug.Log("AR총알");
+        }
+        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "SR")
+        {
+            Debug.Log("SR총알");
+        }
+        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "SMG")
+        {
+            Debug.Log("SMG총알");
+        }
+        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "ShotGun")
+        {
+            Debug.Log("ShoutGun총알");
+        }
+        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "Pistol")
+        {
+            Debug.Log("Pistol총알");
+        }
+        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "Punch")
+        {
+            Debug.Log("근접공격");
+        }
+
     }
 
 

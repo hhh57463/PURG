@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ad26329616bc14f86563c2240e3c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSc: {fileID: 948431472}
   ItemSc: {fileID: 451871787}
   bPlayerDie: 0
   bItemAllow: 0
