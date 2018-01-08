@@ -10,6 +10,9 @@ TagManager:
   - SMG
   - AR
   - SR
+  - ShotGun
+  - Pistol
+  - AttackBtn
   layers:
   - Default
   - TransparentFX

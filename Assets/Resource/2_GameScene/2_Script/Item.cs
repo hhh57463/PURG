@@ -87,8 +87,9 @@ public class Item : MonoBehaviour
 
     public void ItemRezen()
     {
-       // nItemType = Random.RandomRange(1, 6);           //1:무기, 2:근접무기(프라이팬,빠루 등), 3:헬멧, 4:조끼, 5:힐템
-        nItemType = 1;
+        nItemType = Random.RandomRange(1, 10);           //1:AR, 2:SR, 3,SMG, 4:샷건, 5:권총, 6:근접무기(프라이팬,빠루 등), 7:헬멧, 8:조끼, 9:힐템
+        
+        //nItemType = 1;
     }
 
     private void OnTriggerEnter(Collider col)
@@ -100,7 +101,7 @@ public class Item : MonoBehaviour
                 switch (nItemType)
                 {
                     case 1:
-                        Debug.Log("무기장착");
+                        Debug.Log("AR장착");
                         if (nAmmorCount[0] == 0)
                         {
                             nAmmorCount[0]++;
@@ -116,6 +117,71 @@ public class Item : MonoBehaviour
                         break;
 
                     case 2:
+                        Debug.Log("SR장착");
+                        if (nAmmorCount[0] == 0)
+                        {
+                            nAmmorCount[0]++;                                   
+                            PlayerSc.NowWeaponGams.tag = "SR";                  
+                            //PlayerItemGams[0].SetActive(true);
+                        }
+                        else if (nAmmorCount[0] >= 1)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerSc.DifferentWeaponGams.tag = "SR";            
+                            //PlayerItemGams[1].SetActive(true);
+                        }
+                        break;
+
+                    case 3:
+                        Debug.Log("SMG장착");
+                        if (nAmmorCount[0] == 0)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerSc.NowWeaponGams.tag = "SMG";                 
+                            //PlayerItemGams[0].SetActive(true);
+                        }
+                        else if (nAmmorCount[0] >= 1)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerSc.DifferentWeaponGams.tag = "SMG";           
+                            //PlayerItemGams[1].SetActive(true);
+                        }
+                        break;
+
+
+                    case 4:
+                        Debug.Log("샷건장착");
+                        if (nAmmorCount[0] == 0)
+                        {                                                    
+                            nAmmorCount[0]++;
+                            PlayerSc.NowWeaponGams.tag = "ShotGun";            
+                            //PlayerItemGams[0].SetActive(true);
+                        }
+                        else if (nAmmorCount[0] >= 1)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerSc.DifferentWeaponGams.tag = "ShotGun";      
+                            //PlayerItemGams[1].SetActive(true);
+                        }
+                        break;
+
+                    case 5:
+                        Debug.Log("권총장착");
+                        if (nAmmorCount[0] == 0)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerSc.NowWeaponGams.tag = "Pistol";            
+                            //PlayerItemGams[0].SetActive(true);
+                        }
+                        else if (nAmmorCount[0] >= 1)
+                        {
+                            nAmmorCount[0]++;
+                            PlayerSc.DifferentWeaponGams.tag = "Pistol";      
+                            //PlayerItemGams[1].SetActive(true);
+                        }
+                        break;
+
+                    case 6:
                         Debug.Log("근접무기장착");
                         if (nAmmorCount[0] == 0)
                         {
@@ -131,7 +197,7 @@ public class Item : MonoBehaviour
                         }
                         break;
 
-                    case 3:
+                    case 7:
                         Debug.Log("헬멧장착");
                         if (nAmmorCount[1] == 0)
                         {
@@ -140,7 +206,7 @@ public class Item : MonoBehaviour
                         }
                         break;
 
-                    case 4:
+                    case 8:
                         Debug.Log("조끼장착");
                         if (nAmmorCount[2] == 0)
                         {
@@ -149,7 +215,7 @@ public class Item : MonoBehaviour
                         }
                         break;
 
-                    case 5:
+                    case 9:
                         Debug.Log("힐템");
                         SGameMng.I.nSaveHp = SGameMng.I.nPlayerHp;
                         bPlusHp = true;
