@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameBtnMng : MonoBehaviour {
+public class GameBtnMng : MonoBehaviour
+{
 
     public Player PlayerSc = null;
-    public bool bAttackBtnAllow = false;
 
+    public bool bAttackBtnAllow = false;
+    public bool bBulletShot = false;
+
+    public float fBulletDelay = 0.0f;
 
     private void Update()
     {
@@ -57,30 +61,17 @@ public class GameBtnMng : MonoBehaviour {
 
     public void PlayerAttackBtn()
     {
-        //Debug.Log("공격 버튼!");
-        if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "AR")
+
+
+        if (!bBulletShot)
         {
-            Debug.Log("AR총알");
+            fBulletDelay = Time.time;
+            SGameMng.I.PlayerSc.BulletShot();
+            bBulletShot = true;
         }
-        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "SR")
+        if (Time.time > fBulletDelay + 0.1f)                                //연사속도
         {
-            Debug.Log("SR총알");
-        }
-        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "SMG")
-        {
-            Debug.Log("SMG총알");
-        }
-        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "ShotGun")
-        {
-            Debug.Log("ShoutGun총알");
-        }
-        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "Pistol")
-        {
-            Debug.Log("Pistol총알");
-        }
-        else if (SGameMng.I.PlayerSc.NowWeaponGams.tag == "Punch")
-        {
-            Debug.Log("근접공격");
+            bBulletShot = false;
         }
 
     }

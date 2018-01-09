@@ -8,10 +8,12 @@ public class Player : MonoBehaviour
     public GameObject[] WeaponGams = null;
     public GameObject NowWeaponGams = null;                                                         //현재무기
     public GameObject DifferentWeaponGams = null;                                                   //다른손무기
-
-    public Item ItemSc = null;
+    public GameObject BulletPrefabGams = null;
 
     public Transform[] WeaponTr = null;
+    public Transform BulletParentTr = null;
+
+    public Item ItemSc = null;
 
     public SpriteRenderer[] WeaoponsSr = null;
 
@@ -60,6 +62,44 @@ public class Player : MonoBehaviour
         {
             PlayerRig.AddForce(Vector3.up * fJumpPower);
             bJumpAllow = true;
+        }
+    }
+
+    public void BulletShot()
+    {
+        if (NowWeaponGams.tag == "AR")
+        {
+            Debug.Log("AR총알");
+            //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
+            Instantiate(BulletPrefabGams, BulletParentTr);
+        }
+        else if (NowWeaponGams.tag == "SR")
+        {
+            Debug.Log("SR총알");
+            //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
+            Instantiate(BulletPrefabGams, BulletParentTr);
+        }
+        else if (NowWeaponGams.tag == "SMG")
+        {
+            Debug.Log("SMG총알");
+            //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
+            Instantiate(BulletPrefabGams, BulletParentTr);
+        }
+        else if (NowWeaponGams.tag == "ShotGun")
+        {
+            Debug.Log("ShoutGun총알");
+            //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
+            Instantiate(BulletPrefabGams, BulletParentTr);
+        }
+        else if (NowWeaponGams.tag == "Pistol")
+        {
+            Debug.Log("Pistol총알");
+            //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
+            Instantiate(BulletPrefabGams, BulletParentTr);
+        }
+        else if (NowWeaponGams.tag == "Punch")
+        {
+            Debug.Log("근접공격");
         }
     }
 
