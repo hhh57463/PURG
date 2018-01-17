@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
         else if (NowWeaponGams.tag == "Punch")
         {
             Debug.Log("근접공격");
+            Instantiate(BulletPrefabGams, BulletParentTr);
         }
     }
 

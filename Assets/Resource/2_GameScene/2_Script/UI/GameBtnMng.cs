@@ -61,21 +61,15 @@ public class GameBtnMng : MonoBehaviour
 
     public void PlayerAttackBtn()
     {
-
-
         if (!bBulletShot)
         {
             fBulletDelay = Time.time;
             SGameMng.I.PlayerSc.BulletShot();
             bBulletShot = true;
         }
-        if (Time.time > fBulletDelay + 0.1f)                                //연사속도
+        if (Time.time > fBulletDelay + SGameMng.I.fBulletDelay)                                //연사속도
         {
             bBulletShot = false;
         }
-
     }
-
-
-
 }

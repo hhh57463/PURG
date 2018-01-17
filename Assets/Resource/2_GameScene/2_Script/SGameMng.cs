@@ -19,6 +19,8 @@ public class SGameMng : MonoBehaviour
     public int nPlayerHp = 0;
     public int nSaveHp = 0;
 
+    public float fBulletDelay = 0.0f;
+
 
     public static SGameMng I
     {
@@ -42,13 +44,14 @@ public class SGameMng : MonoBehaviour
         nPlayerHp = 100;
         nSurvivor = 100;
         nNowWeaponType = 0;                                             //처음엔 주먹
+        fBulletDelay = 1.0f;
         StartCoroutine(ItemSpawn());
     }
 
     private void Update()
     {
         ItemPercent();
-
+        BulletDelaySetting();
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -336,6 +339,34 @@ public class SGameMng : MonoBehaviour
             //ItemSc.bItemStart = true;
             Debug.Log("랜덤값 지정 완료, 값 : " + nItemRand);
             //StartCoroutine(ItemSpawn());
+        }
+    }
+
+    void BulletDelaySetting()
+    {
+        if (PlayerSc.NowWeaponGams.tag == "AR")
+        {
+            fBulletDelay = 0.05f;
+        }
+        else if (PlayerSc.NowWeaponGams.tag == "SR")
+        {
+            fBulletDelay = 1.5f;
+        }
+        else if (PlayerSc.NowWeaponGams.tag == "SMG")
+        {
+            fBulletDelay = 0.01f;
+        }
+        else if (PlayerSc.NowWeaponGams.tag == "Pistol")
+        {
+            fBulletDelay = 0.5f;
+        }
+        else if (PlayerSc.NowWeaponGams.tag == "ShotGun")
+        {
+            fBulletDelay = 1.6f;
+        }
+        else if (PlayerSc.NowWeaponGams.tag == "Punch")
+        {
+            fBulletDelay = 1.0f;
         }
     }
 

@@ -15,7 +15,6 @@ public class GameTextMng : MonoBehaviour {
 	}
 
 	void Update () {
-		
         PlayerHp.text = SGameMng.I.nPlayerHp.ToString();
         Survivor.text = SGameMng.I.nSurvivor.ToString();
 	}
