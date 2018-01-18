@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public GameObject NowWeaponGams = null;                                                         //현재무기
     public GameObject DifferentWeaponGams = null;                                                   //다른손무기
     public GameObject BulletPrefabGams = null;
+    public GameObject GlovePrefabGams = null;
 
     public Transform[] WeaponTr = null;
     public Transform BulletParentTr = null;
@@ -100,7 +101,7 @@ public class Player : MonoBehaviour
         else if (NowWeaponGams.tag == "Punch")
         {
             Debug.Log("근접공격");
-            Instantiate(BulletPrefabGams, BulletParentTr);
+            Instantiate(GlovePrefabGams, BulletParentTr);
         }
     }
 

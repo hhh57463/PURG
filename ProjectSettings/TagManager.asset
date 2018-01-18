@@ -14,6 +14,8 @@ TagManager:
   - Pistol
   - AttackBtn
   - Bullet
+  - Enemy
+  - EnemySensor
   layers:
   - Default
   - TransparentFX

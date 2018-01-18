@@ -307,7 +307,7 @@ public class SGameMng : MonoBehaviour
                 //Debug.Log("아이템 출현 확률 : 10%");
                 if (nItemRand == 0)
                 {
-
+                    
                 }
                 else if (nItemRand <= 1)
                 {
