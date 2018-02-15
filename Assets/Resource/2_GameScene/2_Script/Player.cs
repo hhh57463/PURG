@@ -70,37 +70,37 @@ public class Player : MonoBehaviour
     {
         if (NowWeaponGams.tag == "AR")
         {
-            Debug.Log("AR총알");
+            //Debug.Log("AR총알");
             //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
             Instantiate(BulletPrefabGams, BulletParentTr);
         }
         else if (NowWeaponGams.tag == "SR")
         {
-            Debug.Log("SR총알");
+            //Debug.Log("SR총알");
             //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
             Instantiate(BulletPrefabGams, BulletParentTr);
         }
         else if (NowWeaponGams.tag == "SMG")
         {
-            Debug.Log("SMG총알");
+            //Debug.Log("SMG총알");
             //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
             Instantiate(BulletPrefabGams, BulletParentTr);
         }
         else if (NowWeaponGams.tag == "ShotGun")
         {
-            Debug.Log("ShoutGun총알");
+            //Debug.Log("ShoutGun총알");
             //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
             Instantiate(BulletPrefabGams, BulletParentTr);
         }
         else if (NowWeaponGams.tag == "Pistol")
         {
-            Debug.Log("Pistol총알");
+            //Debug.Log("Pistol총알");
             //Instantiate(BulletPrefabGams, Vector3.zero, Quaternion.identity, BulletParentTr);
             Instantiate(BulletPrefabGams, BulletParentTr);
         }
         else if (NowWeaponGams.tag == "Punch")
         {
-            Debug.Log("근접공격");
+            //Debug.Log("근접공격");
             Instantiate(GlovePrefabGams, BulletParentTr);
         }
     }

@@ -10,7 +10,7 @@ public class SGameMng : MonoBehaviour
     public Player PlayerSc = null;
     public Item ItemSc = null;
 
-    public bool bPlayerDie = false;
+    public bool bPlayerDie = false;                         //플레이어 죽음 여부
     public bool bItemAllow = false;
 
     public int nItemRand = 0;
@@ -20,7 +20,6 @@ public class SGameMng : MonoBehaviour
     public int nSaveHp = 0;
 
     public float fBulletDelay = 0.0f;
-
 
     public static SGameMng I
     {
