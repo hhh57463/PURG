@@ -25,22 +25,22 @@ public class Enemy : MonoBehaviour
         switch(SGameMng.I.nEnemyType)
         {
             case 1:
-                SGameMng.I.fEnemyBulletDelay = 0.05f;
+                SGameMng.I.fEnemyBulletDelay = 0.1f;
                 break;
             case 2:
-                SGameMng.I.fEnemyBulletDelay = 1.5f;
+                SGameMng.I.fEnemyBulletDelay = 3.0f;
                 break;
             case 3:
-                SGameMng.I.fEnemyBulletDelay = 0.01f;
+                SGameMng.I.fEnemyBulletDelay = 0.05f;
                 break;
             case 4:
-                SGameMng.I.fEnemyBulletDelay = 0.5f;
+                SGameMng.I.fEnemyBulletDelay = 1.0f;
                 break;
             case 5:
-                SGameMng.I.fEnemyBulletDelay = 1.6f;
+                SGameMng.I.fEnemyBulletDelay = 3.0f;
                 break;
             case 6:
-                SGameMng.I.fEnemyBulletDelay = 1.0f;
+                SGameMng.I.fEnemyBulletDelay = 2.0f;
                 break;
         }
     }
