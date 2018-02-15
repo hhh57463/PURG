@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
     public GameObject[] WeaponGams = null;
     public GameObject NowWeaponGams = null;                                                         //현재무기
     public GameObject DifferentWeaponGams = null;                                                   //다른손무기
@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer[] WeaoponsSr = null;
 
-    Rigidbody PlayerRig;
+    public Text WeaponText = null;
+
+    Rigidbody PlayerRig = null;
 
     float fJumpPower = 0.0f;
 

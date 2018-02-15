@@ -223,7 +223,9 @@ MonoBehaviour:
   nNowWeaponType: 0
   nPlayerHp: 0
   nSaveHp: 0
+  nEnemyType: 0
   fBulletDelay: 0
+  fEnemyBulletDelay: 0
 --- !u!4 &168679567
 Transform:
   m_ObjectHideFlags: 0
@@ -390,7 +392,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 1, z: 1}
+  m_Size: {x: 6, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &510183140
 MonoBehaviour:
@@ -1139,6 +1141,7 @@ MonoBehaviour:
   WeaoponsSr:
   - {fileID: 731359293}
   - {fileID: 831449062}
+  WeaponText: {fileID: 0}
   bJumpAllow: 0
   bWeaponSwap: 0
 --- !u!95 &948431473
@@ -1746,6 +1749,34 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1580990557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1580990558}
+  m_Layer: 0
+  m_Name: EnemyBulletParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1580990558
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1580990557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1654450496}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1605031835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1835,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 510183138}
+  - {fileID: 1580990558}
   m_Father: {fileID: 1785622362}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1890,8 +1922,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSearchSensor: {fileID: 510183140}
+  EnemyBulletPrefabGams: {fileID: 1583404810619932, guid: 29482f01ad6207549961e5f4dd83e096,
+    type: 2}
+  EnemyGlovePrefabGams: {fileID: 1796592803479768, guid: ea6c8c0124301c840a9dbaf7f2473a7f,
+    type: 2}
+  EnemyBulletParentTr: {fileID: 1580990558}
   fEnemySpeed: 0
+  fBulletDelay: 0
   bAttackForm: 0
+  bBulletShot: 0
 --- !u!1 &1727612977
 GameObject:
   m_ObjectHideFlags: 0

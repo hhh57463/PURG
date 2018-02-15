@@ -18,8 +18,10 @@ public class SGameMng : MonoBehaviour
     public int nNowWeaponType = 0;
     public int nPlayerHp = 0;
     public int nSaveHp = 0;
+    public int nEnemyType = 0;
 
     public float fBulletDelay = 0.0f;
+    public float fEnemyBulletDelay = 0.0f;
 
     public static SGameMng I
     {
@@ -75,6 +77,20 @@ public class SGameMng : MonoBehaviour
             }
         }
 
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //if (nPlayerHp <= 0)
+        //{
+        //    nPlayerHp = 0;
+        //    bPlayerDie = true;
+        //    Debug.Log("플레이어 사망!!");
+        //}
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
         //if (nItemRand == 0)
         //{
 
@@ -95,6 +111,11 @@ public class SGameMng : MonoBehaviour
         //    ItemSc.ItemSr.enabled = false;
         //}
 
+    }
+
+    public void EnemySpawn()
+    {
+        nEnemyType = Random.Range(1, 7);
     }
 
     void ItemPercent()                                                                      //생존자 수에따른 아이템 출현 확률 조정

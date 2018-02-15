@@ -6,14 +6,43 @@ public class Enemy : MonoBehaviour
 {
     public SearchSensor PlayerSearchSensor = null;
 
+    public GameObject EnemyBulletPrefabGams = null;
+    public GameObject EnemyGlovePrefabGams = null;
+    public Transform EnemyBulletParentTr = null;
+
     public float fEnemySpeed = 0.0f;
+    public float fBulletDelay = 0.0f;
 
     public bool bAttackForm = false;
+    public bool bBulletShot = false;
 
     // Use this for initialization
     void Start()
     {
         fEnemySpeed = 1.0f;
+        //무기에 따라 처음 Start부분에서 SGameMng에있는 fEnemyBulletDelay의 속도를 맞춰줘야함.
+        SGameMng.I.EnemySpawn();
+        switch(SGameMng.I.nEnemyType)
+        {
+            case 1:
+                SGameMng.I.fEnemyBulletDelay = 0.05f;
+                break;
+            case 2:
+                SGameMng.I.fEnemyBulletDelay = 1.5f;
+                break;
+            case 3:
+                SGameMng.I.fEnemyBulletDelay = 0.01f;
+                break;
+            case 4:
+                SGameMng.I.fEnemyBulletDelay = 0.5f;
+                break;
+            case 5:
+                SGameMng.I.fEnemyBulletDelay = 1.6f;
+                break;
+            case 6:
+                SGameMng.I.fEnemyBulletDelay = 1.0f;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -21,6 +50,7 @@ public class Enemy : MonoBehaviour
     {
         EnemyMove();
         ChangeForm();
+        Attack();
     }
 
     void EnemyMove()
@@ -28,10 +58,55 @@ public class Enemy : MonoBehaviour
         transform.Translate(Vector3.left * fEnemySpeed * Time.deltaTime);
     }
 
+    void Attack()
+    {
+        if (bAttackForm)
+        {
+            if (!bBulletShot)
+            {
+                fBulletDelay = Time.time;
+                BulletShot();
+                bBulletShot = true;
+            }
+            if (Time.time > fBulletDelay + SGameMng.I.fEnemyBulletDelay)                                //연사속도
+            {
+                bBulletShot = false;
+            }
+        }
+    }
+
     void ChangeForm()
     {
         if (PlayerSearchSensor.bPlayerSearch)
             bAttackForm = true;
+    }
+
+    public void BulletShot()
+    {
+        if (SGameMng.I.nEnemyType == 1)
+        {
+            Instantiate(EnemyBulletPrefabGams, EnemyBulletParentTr);
+        }
+        else if (SGameMng.I.nEnemyType == 2)
+        {
+            Instantiate(EnemyBulletPrefabGams, EnemyBulletParentTr);
+        }
+        else if (SGameMng.I.nEnemyType == 3)
+        {
+            Instantiate(EnemyBulletPrefabGams, EnemyBulletParentTr);
+        }
+        else if (SGameMng.I.nEnemyType == 4)
+        {
+            Instantiate(EnemyBulletPrefabGams, EnemyBulletParentTr);
+        }
+        else if (SGameMng.I.nEnemyType == 5)
+        {
+            Instantiate(EnemyBulletPrefabGams, EnemyBulletParentTr);
+        }
+        else if (SGameMng.I.nEnemyType == 6)
+        {
+            Instantiate(EnemyGlovePrefabGams, EnemyBulletParentTr);
+        }
     }
 
     private void OnCollisionEnter(Collision col)

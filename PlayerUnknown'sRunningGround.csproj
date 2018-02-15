@@ -286,6 +286,8 @@
     <Compile Include="Assets\Resource\2_GameScene\2_Script\BackGround.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\Bullet.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Resource\2_GameScene\2_Script\Enemy\EnemyBullet.cs" />
+    <Compile Include="Assets\Resource\2_GameScene\2_Script\Enemy\EnemyMeleeAttack.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\Enemy\SearchSensor.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\Item.cs" />
     <Compile Include="Assets\Resource\2_GameScene\2_Script\MeleeAttack.cs" />
