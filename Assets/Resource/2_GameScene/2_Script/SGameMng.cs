@@ -19,6 +19,7 @@ public class SGameMng : MonoBehaviour
     public int nPlayerHp = 0;
     public int nSaveHp = 0;
     public int nEnemyType = 0;
+    public int nPlayerBulletDamage = 0;
 
     public float fBulletDelay = 0.0f;
     public float fEnemyBulletDelay = 0.0f;
@@ -45,6 +46,7 @@ public class SGameMng : MonoBehaviour
         nPlayerHp = 100;
         nSurvivor = 100;
         nNowWeaponType = 0;                                             //처음엔 주먹
+        nPlayerBulletDamage = 10;                                    //주먹 데미지;
         fBulletDelay = 1.0f;
         StartCoroutine(ItemSpawn());
     }

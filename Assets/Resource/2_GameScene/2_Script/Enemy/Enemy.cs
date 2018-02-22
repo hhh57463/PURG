@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     public GameObject EnemyGlovePrefabGams = null;
     public Transform EnemyBulletParentTr = null;
 
+    public int nEnemyHp = 0;
+
     public float fEnemySpeed = 0.0f;
     public float fBulletDelay = 0.0f;
 
@@ -20,6 +22,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         fEnemySpeed = 1.0f;
+        nEnemyHp = 100;
         //무기에 따라 처음 Start부분에서 SGameMng에있는 fEnemyBulletDelay의 속도를 맞춰줘야함.
         SGameMng.I.EnemySpawn();
         switch(SGameMng.I.nEnemyType)
@@ -56,6 +59,12 @@ public class Enemy : MonoBehaviour
     void EnemyMove()
     {
         transform.Translate(Vector3.left * fEnemySpeed * Time.deltaTime);
+
+        if (nEnemyHp <= 0)
+        {
+            nEnemyHp = 0;
+            Destroy(gameObject);
+        }
     }
 
     void Attack()
@@ -113,7 +122,20 @@ public class Enemy : MonoBehaviour
     {
         if (col.transform.CompareTag("Player"))
         {
-            Debug.Log("플레이어 사망! 게임 끝.");
+            //Debug.Log("플레이어 사망! 게임 끝.");
+            Debug.Log("플레이어 적과 충돌.");
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Bullet"))
+        {
+            if (nEnemyHp > 0)
+            {
+                nEnemyHp -= SGameMng.I.nPlayerBulletDamage;
+            }
         }
     }
 
